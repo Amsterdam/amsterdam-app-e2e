@@ -1,12 +1,3 @@
-resources:
-  pipelines:
-    - pipeline: build
-      source: 'aapp_app_mobile [build]'
-      trigger:
-        branches:
-          include:
-            - main
-
 steps:
 - template: shared.yml
   parameters:
