@@ -1,3 +1,3 @@
 #!/bin/bash
 
-zip -r aapp-maestro.zip aapp/
+zip -r maestro-tests.zip .maestro/
