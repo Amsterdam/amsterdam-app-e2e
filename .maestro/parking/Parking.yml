@@ -1,0 +1,8 @@
+appId: nl.amsterdam.app.dev
+---
+- runFlow:
+    file: ParkingStartKraskaartSession.yaml
+- runFlow:
+    file: ParkingAddLicensePlate.yaml
+- runFlow:
+    file: ParkingAddMoneyBalance.yaml
