@@ -11,7 +11,7 @@ jobs:
     variables:
       - group: aapp_testing_e2e
     steps:
-      - template: templates/push-repo-to-github.yml
+      - template: ./templates/push-repo-to-github.yml
         parameters:
           repository: 'amsterdam-app-e2e'
           sshKeySecureFile: 'e2e-github-ssh'
