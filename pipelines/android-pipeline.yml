@@ -19,11 +19,25 @@ resources:
 
 variables:
   - group: aapp_testing_e2e
+  - name: devices
+    value: |
+      Samsung Galaxy S25-15.0
+      Samsung Galaxy S24-14.0
+      Google Pixel 8-14.0
+      OnePlus 11-13.0
+      Xiaomi 13-13.0
 
 pool:
       vmImage: 'macOS-15'
 
 steps:
+- script: |
+    devices=("${{ variables.devices }}" )
+    IFS=$'\n' read -rd '' -a device_array <<<"$devices"
+    RANDOM_DEVICE="${device_array[$((RANDOM % ${#device_array[@]}))]}"
+    echo "##vso[task.setvariable variable=randomDevice]$RANDOM_DEVICE"
+  displayName: 'Pick random device'
+
 - template: templates/shared.yml
   parameters:
     appId: ${{ parameters.androidAppId }}
@@ -31,5 +45,5 @@ steps:
     buildArtifact: 'android-build'
     appFileName: 'android/app/build/outputs/apk/dev/release/app-dev-release.apk'
     platform: 'android'
-    device: 'Samsung Galaxy S24-14.0'
+    device: $(randomDevice)
     buildApiUrl: 'https://api-cloud.browserstack.com/app-automate/maestro/v2/android/build'
