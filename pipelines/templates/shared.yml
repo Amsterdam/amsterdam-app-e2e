@@ -26,7 +26,7 @@ steps:
   - task: ArchiveFiles@2
     condition: ${{ eq(parameters.testSuiteId, ' ') }}
     inputs:
-      rootFolderOrFile: '.maestro'
+      rootFolderOrFile: 'maestro'
       includeRootFolder: true
       archiveType: 'zip'
       archiveFile: '$(Build.ArtifactStagingDirectory)/maestro-tests.zip'
