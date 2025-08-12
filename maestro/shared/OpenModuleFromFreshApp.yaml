@@ -4,7 +4,7 @@ tags:
 ---
 - tapOn:
     id: 'OnboardingCloseIcon'
-    # optional: true
+    optional: true
 - tapOn:
     id: 'HeaderEnvironmentIcon'
 - tapOn:
