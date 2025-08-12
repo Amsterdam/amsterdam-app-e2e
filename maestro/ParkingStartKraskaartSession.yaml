@@ -3,17 +3,17 @@ appId: nl.amsterdam.app.dev
 - launchApp:
     clearState: true
 - runFlow:
-    file: ../shared/OpenModuleFromFreshApp.yaml
+    file: shared/OpenModuleFromFreshApp.yaml
     env:
       ENVIRONMENT: Acceptance
       MODULE: HomeParkingModuleButton
 - runFlow:
-    file: shared/LoginToParking.yaml
+    file: parking/shared/LoginToParking.yaml
     env:
       REPORT_CODE: ${REPORT_CODE}
       PIN_CODE: ${PIN_CODE}
 - runFlow:
-    file: shared/SelectPermit.yaml
+    file: parking/shared/SelectPermit.yaml
     env:
       PERMIT: 'Kraskaart.*'
 - tapOn: 'Start parkeersessie'
