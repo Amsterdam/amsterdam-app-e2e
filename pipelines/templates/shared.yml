@@ -33,13 +33,6 @@ steps:
       replaceExistingArchive: true
     displayName: 'Create ZIP-file of Maestro tests'
 
-  - task: PublishBuildArtifacts@1
-    inputs:
-      pathToPublish: '$(Build.ArtifactStagingDirectory)/maestro-tests.zip'
-      artifactName: 'maestro-tests'
-      publishLocation: 'Container'
-    displayName: 'Publish Maestro Tests Artifact'
-
   # Download app build files
   - download: build
     condition: ${{ eq(parameters.appId, ' ') }}
@@ -110,7 +103,7 @@ steps:
           devices = @("${{ parameters.device }}")
           networkLogs = $false
           deviceLogs = $true
-          execute = @(".maestro")
+          execute = @("Parking.yml")
       } | ConvertTo-Json -Depth 10
       $headers = @{
           Authorization = "Basic $(AUTH_HASH)"
