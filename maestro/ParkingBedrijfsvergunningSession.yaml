@@ -10,8 +10,8 @@ env:
     file: parking/shared/InitStartSession.yaml
     env:
       PERMIT: 'Bedrijfs.*'
-      REPORT_CODE: '59069309'
-      PIN_CODE: '7554'
+      REPORT_CODE: __PARKING_ACCOUNT_BEDRIJF_REPORT_CODE__
+      PIN_CODE: __PARKING_ACCOUNT_BEDRIJF_PIN_CODE__
 - tapOn:
     id: ParkingGoToStartSessionCodevergunningButton
 - tapOn:
