@@ -1,0 +1,10 @@
+appId: nl.amsterdam.app.dev
+---
+- swipe:
+    from:
+      id: ParkingSessionAddLicensePlateSaveSwitch
+    direction: RIGHT
+- tapOn:
+    id: ParkingAddLicensePlateFormNameInputFieldInput
+- inputRandomPersonName
+- pressKey: Enter

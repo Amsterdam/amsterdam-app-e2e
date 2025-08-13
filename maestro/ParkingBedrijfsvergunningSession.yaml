@@ -21,14 +21,11 @@ env:
     id: ParkingAddLicensePlateFormLicensePlateInputFieldInput
 - inputText: ${LICENSE_PLATE}
 - pressKey: Enter
-- swipe:
-    from:
-      id: ParkingSessionAddLicensePlateSaveSwitch
-    direction: RIGHT
-- tapOn:
-    id: ParkingAddLicensePlateFormNameInputFieldInput
-- inputRandomPersonName
-- pressKey: Enter
+- runFlow:
+    file: parking/shared/SaveLicensePlate.yaml
+    when:
+      notVisible:
+        id: ParkingSessionAddLicensePlateDuplicateAlert
 - tapOn:
     id: ParkingSessionAddLicensePlateSubmitButton
 - runFlow: parking/shared/ChooseEndTimeScrollWheel.yaml
