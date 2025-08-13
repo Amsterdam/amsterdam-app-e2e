@@ -1,0 +1,29 @@
+appId: nl.amsterdam.app.dev
+---
+- launchApp:
+    clearState: true
+- runFlow:
+    file: parking/shared/InitStartSession.yaml
+    env:
+      PERMIT: 'Op bezoek.*'
+      REPORT_CODE: __PARKING_ACCOUNT_VISITOR_REPORT_CODE__
+      PIN_CODE: __PARKING_ACCOUNT_VISITOR_PIN_CODE__
+- tapOn:
+    id: ParkingVisitorLicensePlateInputFieldInput
+- inputText: 'ABC123'
+- pressKey: Enter
+- runFlow:
+    file: parking/shared/ChooseEndTimeSpinner.yaml
+- runFlow:
+    file: parking/shared/ChoosePaymentZone.yaml
+- scrollUntilVisible:
+    element:
+      id: ParkingStartSessionKraskaartvergunningButton
+- tapOn:
+    id: ParkingStartSessionKraskaartvergunningButton
+- tapOn:
+    text: Open
+    index: 1
+    optional: true
+- assertVisible:
+    id: ParkingStartSessionSuccessAlertWrapper

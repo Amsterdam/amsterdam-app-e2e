@@ -1,6 +1,4 @@
 appId: nl.amsterdam.app.dev
-tags:
-  - util
 ---
 - tapOn:
     id: 'OnboardingCloseIcon'

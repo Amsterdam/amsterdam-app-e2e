@@ -1,8 +1,57 @@
 appId: nl.amsterdam.app.dev
+env:
+  LICENSE_PLATE: 'ABC123'
 ---
+- launchApp:
+    clearState: true
+    permissions:
+      notifications: allow
 - runFlow:
-    file: parking/shared/StartSession.yaml
+    file: parking/shared/InitStartSession.yaml
     env:
-        PERMIT: 'Bedrijfs.*'
-        REPORT_CODE: '__PARKING_ACCOUNT_BEDRIJF_REPORT_CODE__'
-        PIN_CODE: '__PARKING_ACCOUNT_BEDRIJF_PIN_CODE__'
+      PERMIT: 'Bedrijfs.*'
+      REPORT_CODE: __PARKING_ACCOUNT_BEDRIJF_REPORT_CODE__
+      PIN_CODE: __PARKING_ACCOUNT_BEDRIJF_PIN_CODE__
+- tapOn:
+    id: 'ParkingChooseLicensePlateButton'
+- waitForAnimationToEnd
+- tapOn:
+    id: ParkingAddLicensePlateFormLicensePlateInputFieldInput
+- inputText: ${LICENSE_PLATE}
+- pressKey: Enter
+- swipe:
+    from:
+      id: ParkingSessionAddLicensePlateSaveSwitch
+    direction: RIGHT
+- tapOn:
+    id: ParkingAddLicensePlateFormNameInputFieldInput
+- inputRandomPersonName
+- pressKey: Enter
+- tapOn:
+    id: ParkingSessionAddLicensePlateSubmitButton
+- tapOn:
+    id: 'ParkingChooseEndTimeButton'
+- waitForAnimationToEnd
+- swipe:
+    start: 55%, 80%
+    end: 55%, 60%
+- tapOn:
+    id: 'ParkingSessionEndTimeBottomSheetContentDoneButton'
+- scrollUntilVisible:
+    element:
+      id: ParkingStartSessionCodevergunningButton
+- tapOn:
+    id: ParkingStartSessionCodevergunningButton
+- tapOn:
+    text: Open
+    index: 1
+    optional: true
+- assertVisible:
+    id: ParkingStartSessionSuccessAlertWrapper
+- scrollUntilVisible:
+    element:
+      id: ParkingLicensePlatesButton
+- tapOn:
+    id: ParkingLicensePlatesButton
+- tapOn: 'Verwijder kenteken ${LICENSE_PLATE}.*'
+- tapOn: 'Verwijderen'
