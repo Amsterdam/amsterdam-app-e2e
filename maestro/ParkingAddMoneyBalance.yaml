@@ -27,6 +27,8 @@ appId: nl.amsterdam.app.dev
 - tapOn:
     id: ParkingIncreaseBalanceExternalLinkButton
 - tapOn:
-    text: /Altijd|Always|Open/
+    text: Open
+    index: 1
+    optional: true
 - assertVisible:
     id: ParkingIncreaseBalanceSuccessAlert

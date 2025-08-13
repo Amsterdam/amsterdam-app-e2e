@@ -22,10 +22,9 @@ variables:
   - name: devices
     value: |
       Samsung Galaxy S25-15.0
-      Samsung Galaxy S24-14.0
       Google Pixel 8-14.0
-      OnePlus 11-13.0
-      Xiaomi 13-13.0
+      OnePlus 11R-13.0
+      Samsung Galaxy A52-11.0
 
 pool:
       vmImage: 'macOS-15'
