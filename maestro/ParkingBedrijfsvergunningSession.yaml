@@ -38,7 +38,14 @@ env:
     text: 'Allow'
     optional: true
 - assertVisible:
-    id: ParkingStartSessionSuccessAlertWrapper
+    id: ParkingStartSessionSuccessAlert
+- scrollUntilVisible:
+    element:
+      id: ParkingLicensePlatesButton
+- tapOn:
+    id: ParkingLicensePlatesButton
+- tapOn: 'Verwijder kenteken ${LICENSE_PLATE}.*'
+- tapOn: 'Verwijderen'
 - tapOn: 'Kenteken ${LICENSE_PLATE}.*'
 - tapOn:
     id: ParkingSessionDetailsAdjustEndTimeButton
@@ -47,10 +54,3 @@ env:
     id: ParkingEditSessionButton
 - assertVisible:
     id: ParkingAdjustSessionSuccessAlert
-- scrollUntilVisible:
-    element:
-      id: ParkingLicensePlatesButton
-- tapOn:
-    id: ParkingLicensePlatesButton
-- tapOn: 'Verwijder kenteken ${LICENSE_PLATE}.*'
-- tapOn: 'Verwijderen'
