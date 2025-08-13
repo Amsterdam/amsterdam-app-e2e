@@ -19,6 +19,7 @@ appId: nl.amsterdam.app.dev
 - tapOn: 'Start parkeersessie'
 - tapOn:
     id: 'ParkingChooseLicensePlateButton'
+- waitForAnimationToEnd
 - tapOn:
     id: ParkingAddLicensePlateFormLicensePlateInputFieldInput
 - inputText: 'ABC123'
