@@ -2,5 +2,3 @@ appId: nl.amsterdam.app.dev
 ---
 - tapOn:
     text: Open
-    index: 1
-    retryTapIfNoChange: true
