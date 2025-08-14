@@ -34,6 +34,13 @@ jsEngine: graaljs
     optional: true
 - assertVisible:
     id: ParkingStartSessionSuccessAlert
+- tapOn:
+    id: ParkingSessionDetailsAdjustEndTimeButton
+- runFlow: parking/shared/ChooseEndTimeScrollWheel.yaml
+- tapOn:
+    id: ParkingEditSessionButton
+- assertVisible:
+    id: ParkingAdjustSessionSuccessAlert
 - scrollUntilVisible:
     element:
       id: ParkingLicensePlatesButton
@@ -42,11 +49,3 @@ jsEngine: graaljs
     retryTapIfNoChange: true
 - tapOn: 'Verwijder kenteken ${output.licensePlate}.*'
 - tapOn: 'Verwijderen'
-- tapOn: 'Kenteken ${output.licensePlate}.*'
-- tapOn:
-    id: ParkingSessionDetailsAdjustEndTimeButton
-- runFlow: parking/shared/ChooseEndTimeScrollWheel.yaml
-- tapOn:
-    id: ParkingEditSessionButton
-- assertVisible:
-    id: ParkingAdjustSessionSuccessAlert
