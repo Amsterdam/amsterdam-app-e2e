@@ -19,3 +19,5 @@ appId: nl.amsterdam.app.dev
       platform: iOS
 - assertVisible:
     id: ParkingIncreaseBalanceSuccessAlert
+- tapOn:
+    id: ParkingIncreaseBalanceSuccessAlertCloseIcon
