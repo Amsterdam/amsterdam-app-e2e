@@ -17,6 +17,14 @@ resources:
           include:
             - main
 
+schedules:
+  - cron: "0 0 * * *"   # every night
+    displayName: Scheduled E2E Test
+    branches:
+      include:
+        - main
+    always: true  # run even if no recent changes
+
 variables:
   - group: aapp_testing_e2e
   - name: devices
