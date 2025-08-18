@@ -22,7 +22,10 @@ env:
     file: parking/permits/bezoekersvergunning/StopSession.yaml
     env:
       LICENSE_PLATE: ${output.licensePlate}
-- runFlow: parking/permits/bezoekersvergunning/IncreaseBalance.yaml
+- runFlow: 
+    file: parking/permits/bezoekersvergunning/IncreaseBalance.yaml
+    when:
+      platform: Android
 - runFlow: parking/permits/bezoekersvergunning/PermitDetails.yaml
 - scrollUntilVisible:
     element:
