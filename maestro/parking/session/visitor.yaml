@@ -6,6 +6,6 @@ appId: nl.amsterdam.app.dev
 - runFlow:
     file: ../shared/InitStartSession.yaml
     env:
-      PERMIT: 'Bezoekersvergunning'
-      REPORT_CODE: ${output.reportCodeVisitor}
-      PIN_CODE: ${output.pinCodeVisitor}
+      PERMIT: ${output.parkingVisitorName}
+      REPORT_CODE: ${output.parkingVisitorReportCode}
+      PIN_CODE: ${output.parkingVisitorPinCode}
