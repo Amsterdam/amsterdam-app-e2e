@@ -1,3 +1,6 @@
+trigger:
+- main
+
 parameters:
   - name: androidAppId
     displayName: 'Existing Android App ID (optional)'

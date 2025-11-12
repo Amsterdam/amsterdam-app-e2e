@@ -1,3 +1,6 @@
+trigger:
+- main
+
 parameters:
   - name: iosAppId
     displayName: 'Existing iOS App ID (optional)'
