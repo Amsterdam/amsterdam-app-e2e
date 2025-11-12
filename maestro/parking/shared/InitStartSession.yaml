@@ -15,6 +15,8 @@ appId: nl.amsterdam.app.dev
 - runFlow:
     file: ../shared/SelectPermit.yaml
     env:
-      PERMIT: ${PERMIT}
-- tapOn:
-    id: ParkingGoToStartSessionCodevergunningButton
+      PERMIT_NAME: ${PERMIT_NAME}
+- scrollUntilVisible:
+    element:
+      text: Start parkeersessie
+- tapOn: Start parkeersessie
