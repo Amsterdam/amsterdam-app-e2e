@@ -1,3 +1,2 @@
-output.parkingVisitorName = __PARKING_VISITOR_NAME__
 output.parkingVisitorReportCode = __PARKING_VISITOR_REPORT_CODE__
 output.parkingVisitorPinCode = __PARKING_VISITOR_PIN_CODE__
