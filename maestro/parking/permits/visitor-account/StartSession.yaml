@@ -6,7 +6,7 @@ appId: nl.amsterdam.app.dev
 - runFlow:
     file: parking/shared/InitStartSession.yaml
     env:
-      PERMIT: 'Op bezoek.*'
+      PERMIT_NAME: 'Op bezoek.*'
       REPORT_CODE: __PARKING_ACCOUNT_VISITOR_REPORT_CODE__
       PIN_CODE: __PARKING_ACCOUNT_VISITOR_PIN_CODE__
 - tapOn:

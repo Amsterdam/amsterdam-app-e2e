@@ -17,4 +17,4 @@ appId: nl.amsterdam.app.dev
 - runFlow:
     file: ../shared/SelectPermit.yaml
     env:
-      PERMIT: ${PERMIT}
+      PERMIT_NAME: ${PERMIT_NAME}

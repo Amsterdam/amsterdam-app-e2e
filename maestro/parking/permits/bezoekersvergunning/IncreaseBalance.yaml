@@ -15,7 +15,7 @@ appId: nl.amsterdam.app.dev
 - runFlow:
     file: parking/shared/SelectPermit.yaml
     env:
-      PERMIT: 'Kraskaart.*'
+      PERMIT_NAME: 'Kraskaart.*'
 - scrollUntilVisible:
     element:
       id: ParkingPermitBalanceMoneyAddButton
