@@ -1,0 +1,25 @@
+appId: nl.amsterdam.app.dev
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    id: ParkingChooseLicensePlateButton
+- tapOn:
+    id: ParkingAddLicensePlateFormLicensePlateInputFieldInput
+- inputText: TEST1
+- tapOn:
+    id: ParkingSessionAddLicensePlateSubmitButton
+- tapOn:
+    id: ParkingChooseParkingMachineButton
+- tapOn:
+    id: ParkingSessionUseFavoriteMachineButton
+- runFlow: './ChooseEndTimeScrollWheel.yaml'
+- tapOn:
+    id: ParkingStartSession.*Button
+- tapOn:
+    text: 'Sta toe|Allow'
+    optional: true
+- assertVisible:
+    id: 'ParkingStartSessionSuccessAlert'
+- tapOn:
+    id: ParkingStartSessionSuccessAlertCloseIcon

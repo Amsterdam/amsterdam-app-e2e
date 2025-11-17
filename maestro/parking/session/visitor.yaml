@@ -9,3 +9,4 @@ appId: nl.amsterdam.app.dev
       PERMIT_NAME: 'Bezoekersparkeervergunning'
       REPORT_CODE: ${output.parkingVisitorReportCode}
       PIN_CODE: ${output.parkingVisitorPinCode}
+- runFlow: '../shared/StartSession.yaml'
